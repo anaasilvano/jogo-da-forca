@@ -1,0 +1,182 @@
+/* Reset básico */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Definições globais */
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; ;
+  }
+  
+  /* Estilos do header */
+  header {
+    background-image: url('../imagens/desktop-wallpaper-illustration-blood-splatter.jpg'); /* Substitua pelo caminho da sua imagem */
+    color: #fff;
+    padding: 15px 0;
+  }
+  
+  img.senai-logo {
+    max-width: 60%;
+  }
+  
+  /* Estilos gerais */
+  h1 {
+    color: #7c0404; /* Cor azul atualizada */
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } 
+  
+  h1{
+    color: #7c0404;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  h3 {
+    color: #7c0404; 
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 1100;
+    font-style: normal;
+  }/* Cor azul atualizada */
+  
+  
+  p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 30px;
+    }
+
+    .blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000; /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    }
+
+    .blob-btn::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #8b0000; /* Dark red */
+    border-radius: 30px;
+    }
+
+    .blob-btn::after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px; /* 2px border + 1px padding */
+    top: 3px; /* 2px border + 1px padding */
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+    }
+
+    .blob-btn:hover {
+    color: #ffffff; /* Dark */
+    }
+
+    .blob-btn:hover::after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    }
+
+    .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #8b0000; /* Dark red background */
+    }
+
+    .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+    }
+
+    .blob-btn__blob {
+    position: absolute;
+    top: 2px; /* 2px border */
+    width: calc(100% / 4); /* 4 blobs */
+    height: 100%;
+    background: #ff0000; /* Bright red */
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+    }
+
+    .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+    }
+
+    .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+    }
+
+    .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+    }
+
+    .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+    }
+
+    .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+    }
+
+    svg {
+    display: none; /* Hide SVG filter if not needed elsewhere */
+    }
+  /* Estilos do footer */
+  footer {
+    background-color: #c01313;
+    color: #fff;
+    padding: 15px 0;
+  }
+  

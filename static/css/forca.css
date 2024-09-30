@@ -1,0 +1,282 @@
+body {
+    background-color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-size: 25px;
+}
+
+img {
+    width: 15%;
+    padding: 10px;
+}
+
+.container {
+    background-image: url('../imagens/desktop-wallpaper-illustration-blood-splatter.jpg');
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(156, 9, 9, 0.8);
+    padding: 20px;
+    max-width: 100%;
+    width: 80%;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+#dica {
+    color: #d10000;
+    margin-bottom: 20px;
+}
+
+#palavra {
+    color: #343a40;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#guess {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 30px;
+    }
+
+    .blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff; /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    }
+
+    .blob-btn::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #8b0000; /* Dark red */
+    border-radius: 30px;
+    }
+
+    .blob-btn::after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px; /* 2px border + 1px padding */
+    top: 3px; /* 2px border + 1px padding */
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+    }
+
+    .blob-btn:hover {
+    color: #ffffff; /* Dark */
+    }
+
+    .blob-btn:hover::after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    }
+
+    .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #8b0000; /* Dark red background */
+    }
+
+    .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+    }
+
+    .blob-btn__blob {
+    position: absolute;
+    top: 2px; /* 2px border */
+    width: calc(100% / 4); /* 4 blobs */
+    height: 100%;
+    background: #ff0000; /* Bright red */
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+    }
+
+    .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+    }
+
+    .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+    }
+
+    .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+    }
+
+    .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+    }
+
+    .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+    }
+
+    svg {
+    display: none; /* Hide SVG filter if not needed elsewhere */
+    }
+
+#status,
+#attempts {
+    font-size: 1.1em;
+   color: #d10000;
+    margin-top: 20px;
+}
+
+#forca {
+    width: 150px;
+    height: 250px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#forca div {
+    background-color: #8A0303; /* Vermelho sangue */
+    position: absolute;  
+    background-color: rgba(255, 0, 0, 0.8); /* Vermelho sangue em RGBA */
+
+}
+
+footer {
+    background-color: #c01313;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+    margin-top: auto;
+    line-height: 1.6;
+    width: 100%;
+}
+
+header {
+    background-color:#c01313;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img.senai-logo {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .btn {
+        flex: 1 1 100%; 
+        max-width: none; 
+        margin-bottom: 10px;
+    }
+
+    #forca {
+        width: 120px;
+        height: 200px;
+    }
+
+    footer,
+    header {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    img.senai-logo {
+        max-width: 30%;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #forca {
+        width: 100px;
+        height: 180px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    footer,
+    header {
+        font-size: 14px;
+    }
+
+    img.senai-logo { 
+        max-width: 40%;
+    }
+
+    .display-4 {
+        font-size: 1.5rem; 
+    }
+}
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
